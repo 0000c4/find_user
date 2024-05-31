@@ -3,7 +3,7 @@
 
     <input class="form_input" v-model="email" placeholder="email" required type="text" @focus="error = ''">
     <input class="form_input" v-model="number" v-mask="'##-##-##'" placeholder="number" type="text" @focus="error = ''">
-    <span>{{ error }}</span>
+    <span class="error_text">{{ error }}</span>
     <button @click="sendData" :disabled="isLoading" type="submit">Submit</button>
   </form>
   <div v-if="isLoading" class="lds-spinner">
@@ -96,7 +96,9 @@ ul {
   border-radius: 8px;
   border: 1px solid #1a1a1a;
 }
-
+.error_text{
+  color: red;
+}
 .cardContainer {
   display: flex;
   flex-direction: column;
